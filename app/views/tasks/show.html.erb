@@ -1,0 +1,19 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details%></p>
+<br>
+<br>
+<p><input type="checkbox"><%= "This task is not completed yet." %></p>
+<br>
+<br>
+<%# <p><%= link_to "Edit this task", "/tasks/#{@task.id}/edit" %>
+<p><%= link_to "Edit this task", edit_task_path(@task.id) %></p>
+<br>
+<br>
+<p><%= link_to "Back to list.", "/tasks" %></p>
+
+
+<%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/tasks/2"></a>
